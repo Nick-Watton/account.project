@@ -3,7 +3,7 @@ package account.project;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class ServiceTest
+public class serviceTest
 {
 	@Test
 	public void test() throws Exception

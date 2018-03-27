@@ -2,36 +2,29 @@ package account.project;
 
 public class Account
 {
-	//ATTRIBUTES
-	private String m_firstname;
-	private String m_lastname;
-	private int m_accountnumber;
+	private String firstName;
+	private String lastName;
+	private int accountNumber;
 	
-	
-	//METHODS
-	
-	//Constructor
 	public Account(String firstname, String lastname, int accountnumber)
 	{
-		m_firstname = firstname;
-		m_lastname = lastname;
-		m_accountnumber = accountnumber;
+		firstName = firstname;
+		lastName = lastname;
+		accountNumber = accountnumber;
 	}
 	
-	
-	//Get methods
 	public String getFirstName()
 	{
-		return m_firstname;
+		return firstName;
 	}
 	
 	public String getLastName()
 	{
-		return m_lastname;
+		return lastName;
 	}
 	
 	public int getAccountNumber()
 	{
-		return m_accountnumber;
+		return accountNumber;
 	}
 }
