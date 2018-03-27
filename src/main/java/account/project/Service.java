@@ -1,13 +1,18 @@
 package account.project;
 
 import java.util.HashMap;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+
+
 
 public class Service
 {
 	//ATTRIBUTES
 	private HashMap<Integer, Account> m_accountMap;
 	private int m_key;
-	
+
 	
 	//METHODS
 	
@@ -16,6 +21,7 @@ public class Service
 	{
 		m_accountMap = new HashMap<Integer, Account>();
 		m_key = 0;
+
 	}
 	
 	
@@ -37,7 +43,14 @@ public class Service
 		return m_accountMap.get(key);
 	}
 	
-	
+	public String translateAccount() throws Exception {
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonFromMap = mapper.writeValueAsString(m_accountMap);
+		System.out.println(jsonFromMap);
+		
+		return jsonFromMap;
+	}
 	
 	
 }
