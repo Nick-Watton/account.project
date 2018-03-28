@@ -9,7 +9,7 @@ public class ServiceTest
 	public void test() throws Exception
 	{
 		Service service = new Service();
-		String jsonConvert = "{\"0\":{\"accountNumber\":0,\"lastName\":\"Moore\",\"firstName\":\"Matt\"},\"1\":{\"accountNumber\":1,\"lastName\":\"Watton\",\"firstName\":\"Nick\"},\"2\":{\"accountNumber\":2,\"lastName\":\"Biswas\",\"firstName\":\"Anirban\"},\"3\":{\"accountNumber\":3,\"lastName\":\"McGill\",\"firstName\":\"Andrew\"}}";
+		String jsonConvert = "{\"0\":{\"firstName\":\"Matt\",\"lastName\":\"Moore\",\"accountNumber\":0},\"1\":{\"firstName\":\"Nick\",\"lastName\":\"Watton\",\"accountNumber\":1},\"2\":{\"firstName\":\"Anirban\",\"lastName\":\"Biswas\",\"accountNumber\":2},\"3\":{\"firstName\":\"Andrew\",\"lastName\":\"McGill\",\"accountNumber\":3},\"4\":{\"firstName\":\"Nick\",\"lastName\":\"Watton\",\"accountNumber\":4}}"; 
 		String jsonMap;
 		int acCount;
 		
@@ -26,14 +26,17 @@ public class ServiceTest
 		
 		jsonMap = service.translateAccount();
 		assertEquals(jsonMap, jsonConvert);
+		
+		acCount = service.countAccount("Nick");
+		assertEquals(2, acCount);
+		
 		service.removeAccount(4);
 		service.removeAccount(3);
 		service.removeAccount(2);
 		service.removeAccount(1);
 		service.removeAccount(0);
 		
-		acCount = Service.countAccount("Nick");
-		assertEquals(acCount, 2);
+
 		
 		
 	}

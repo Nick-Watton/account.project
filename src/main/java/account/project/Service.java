@@ -41,6 +41,21 @@ public class Service
 		
 		return jsonFromMap;
 	}
-	
-	
+
+	public  int countAccount(String firstName) {
+		
+		Account accountHolder;
+		int acCount = 0;
+		for (int c=0; c < accountMap.size(); c++)
+		{
+			accountHolder = accountMap.get(c);
+
+			if (accountHolder.getFirstName() == firstName) {
+
+				acCount++;
+
+			}
+		}
+		return acCount;
+	}
 }
